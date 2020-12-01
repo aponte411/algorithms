@@ -1,4 +1,4 @@
-package permutations
+package combinatorial
 
 import "testing"
 

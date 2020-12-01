@@ -1,4 +1,4 @@
-package permutations
+package combinatorial
 
 func PrintStringPermutations(str string, i, n int) {
 	// Base case
