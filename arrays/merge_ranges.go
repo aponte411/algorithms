@@ -2,6 +2,7 @@ package arrays
 
 import "sort"
 
+// TODO: need to finish this
 func MergeRanges(nums [][]int) [][]int {
 	sort.Slice(nums, func(i, j int) bool {
 		return nums[i] < nums[j]
