@@ -69,4 +69,3 @@ func numberOfWaysMemo(curr int, denominations []int, index int, memo map[MemoKey
 	memo[key] = numWays
 	return numWays
 }
-
