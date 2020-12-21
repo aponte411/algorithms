@@ -15,7 +15,8 @@ func Power(x float64, n int) float64 {
 }
 
 // O(log n) time, and O(1) space
-func PowerFast(x float64, n int) float64 {
+// PingalaPower Aglorithm
+func PingalaPower(x float64, n int) float64 {
 	N := n
 	if N < 0 {
 		x = 1 / x

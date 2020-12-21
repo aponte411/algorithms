@@ -8,7 +8,7 @@ func TestPower(t *testing.T) {
 	if res != exp {
 		t.Errorf("Expected %v, got %v", exp, res)
 	}
-	res2 := PowerFast(2.00000, 10)
+	res2 := PingalaPower(2.00000, 10)
 	if res2 != exp {
 		t.Errorf("Expected %v, got %v", exp, res2)
 	}
