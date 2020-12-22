@@ -10,6 +10,7 @@ func MergeSort(nums []int) []int {
 	return merge(left, right)
 }
 
+// O(n) time, O(n) space
 func merge(left, right []int) []int {
 	i, j, k := 0, 0, 0
 	size := len(left) + len(right)
