@@ -3,9 +3,9 @@ package sorting
 // O(n^2) time, O(1) space
 func SelectSort(nums []int) {
 	for i := 0; i < len(nums)-1; i++ {
-        // Find min index
+		// Find min index
 		minIndex := findMinIndex(nums, i)
-        // Swap current element at index i with element at minIndex
+		// Swap current element at index i with element at minIndex
 		swap(nums, i, minIndex)
 	}
 }
