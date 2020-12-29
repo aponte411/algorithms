@@ -6,6 +6,7 @@ package searching
 func FindAShortestPath(gph map[string][]string, src, dst string) []string {
 	// Raise error if src or dst are not in edges
 	paths := make(map[string]string, 0)
+	paths[src] = "#"
 	que := make([]string, 0)
 	que = append(que, src)
 	for len(que) != 0 {
@@ -19,7 +20,7 @@ func FindAShortestPath(gph map[string][]string, src, dst string) []string {
 			child := gph[node][i]
 			if _, ok := paths[child]; !ok {
 				paths[child] = node
-				que = append(que, node)
+				que = append(que, child)
 			}
 		}
 	}
@@ -29,9 +30,10 @@ func FindAShortestPath(gph map[string][]string, src, dst string) []string {
 func reconstructPath(paths map[string]string, end string) []string {
 	shortest_path := make([]string, 0)
 	node := end
-	for i := 0; i < len(paths); i++ {
-		node := paths[node]
+	for node != "#" {
 		shortest_path = append(shortest_path, node)
+		node = paths[node]
+
 	}
 	return shortest_path
 }
