@@ -19,7 +19,7 @@ func TestShortestPath(t *testing.T) {
 	}
 	src := "Jayden"
 	dst := "Adam"
-	exp := []string{"Adam", "Amelia", "Jayden"}
+	exp := []string{"Jayden", "Amelia", "Adam"}
 	res := FindAShortestPath(graph, src, dst)
 	if !reflect.DeepEqual(res, exp) {
 		t.Errorf("Expected %v, got %v", exp, res)

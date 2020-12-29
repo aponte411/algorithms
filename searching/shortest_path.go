@@ -1,5 +1,7 @@
 package searching
 
+import "sort"
+
 // TODO: import graph from data-structures/graph
 // and import queue from queue from data-structures/non_linear/queue
 
@@ -35,5 +37,6 @@ func reconstructPath(paths map[string]string, end string) []string {
 		node = paths[node]
 
 	}
+	sort.Sort(sort.Reverse(sort.StringSlice(shortest_path)))
 	return shortest_path
 }
