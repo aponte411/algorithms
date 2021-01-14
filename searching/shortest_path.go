@@ -1,19 +1,20 @@
 package searching
 
-import "sort"
+import (
+	"github.com/aponte411/data-structures/linear/queue"
+	"sort"
+)
 
 // TODO: import graph from data-structures/graph
-// and import queue from queue from data-structures/non_linear/queue
 
 func FindAShortestPath(gph map[string][]string, src, dst string) []string {
 	// Raise error if src or dst are not in edges
 	paths := make(map[string]string, 0)
 	paths[src] = "#"
-	que := make([]string, 0)
-	que = append(que, src)
-	for len(que) != 0 {
-		node := que[0]
-		que = que[1:]
+	que := new(queue.QueueLinkedList)
+	que.Enqueue(src)
+	for !que.IsEmpty() {
+		node := que.Dequeue().(string)
 		if node == dst {
 			// reconstruct path from dst node
 			return reconstructPath(paths, node)
@@ -22,7 +23,7 @@ func FindAShortestPath(gph map[string][]string, src, dst string) []string {
 			child := gph[node][i]
 			if _, ok := paths[child]; !ok {
 				paths[child] = node
-				que = append(que, child)
+				que.Enqueue(child)
 			}
 		}
 	}
