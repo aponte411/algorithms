@@ -1,12 +1,12 @@
 package searching
 
 import (
-    "testing"
-    "fmt"
+	"fmt"
+	"testing"
 )
 
-func BenchmarkShortestPath(b *testing.B){
-    graph := map[string][]string{
+func BenchmarkShortestPath(b *testing.B) {
+	graph := map[string][]string{
 		"Min":     []string{"William", "Jayden", "Omar"},
 		"William": []string{"Min", "Noam"},
 		"Jayden":  []string{"Min", "Amelia", "Ren", "Noam"},
@@ -19,8 +19,8 @@ func BenchmarkShortestPath(b *testing.B){
 	}
 	src := "Jayden"
 	dst := "Adam"
-    for n := 0; n < b.N; n++{
-        res := FindAShortestPath(graph, src, dst)
-        fmt.Println(res)
-    }
+	for n := 0; n < b.N; n++ {
+		res := FindAShortestPath(graph, src, dst)
+		fmt.Println(res)
+	}
 }
